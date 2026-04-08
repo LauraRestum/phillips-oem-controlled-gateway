@@ -139,10 +139,10 @@
   .s6-rule { width: 48px; height: 5px; background: var(--green); margin-bottom: 1.4rem; }
   .s6-lede { font-size: 1rem; line-height: 1.6; color: var(--text); margin-bottom: 1.6rem; font-weight: 500; }
   .s6-lede strong { color: var(--navy); font-weight: 700; }
-  .s6-proofs { display: flex; flex-direction: column; gap: 0.85rem; }
-  .s6-proof { display: grid; grid-template-columns: 60px 1fr; gap: 1rem; align-items: center; }
+  .s6-proofs { display: flex; flex-direction: column; gap: 0.65rem; }
+  .s6-proof { display: grid; grid-template-columns: 55px 1fr; gap: 1rem; align-items: center; }
   .s6-proof-num { font-size: 1.6rem; font-weight: 800; color: var(--green); border-right: 2px solid var(--navy); padding-right: 1rem; text-align: right; line-height: 1; }
-  .s6-proof-text { font-size: 0.88rem; line-height: 1.5; color: var(--text); }
+  .s6-proof-text { font-size: 0.83rem; line-height: 1.45; color: var(--text); }
   .s6-proof-text strong { color: var(--navy); font-weight: 700; display: block; margin-bottom: 0.15rem; }
 
   /* SLIDE 7 — OPERATING CONDITIONS */
@@ -259,6 +259,7 @@
   .slide.active .s6-proof:nth-child(2) { animation-delay: 0.85s; }
   .slide.active .s6-proof:nth-child(3) { animation-delay: 1.0s; }
   .slide.active .s6-proof:nth-child(4) { animation-delay: 1.15s; }
+  .slide.active .s6-proof:nth-child(5) { animation-delay: 1.3s; }
   .slide.active .s7-col { animation: fadeInUp 0.7s ease both; }
   .slide.active .s7-col-envision { animation-delay: 0.5s; }
   .slide.active .s7-col-philips { animation-delay: 0.65s; }
