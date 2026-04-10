@@ -1,0 +1,279 @@
+  :root {
+    --navy: #1B365D;
+    --navy-deep: #0F2340;
+    --navy-darker: #081730;
+    --blue: #4A90A4;
+    --blue-light: #7BB3C7;
+    --green: #7CB342;
+    --green-bright: #8FCB4D;
+    --white: #FFFFFF;
+    --light: #F5F7FA;
+    --light-gray: #E4E9F0;
+    --text: #1D2939;
+    --muted: #667085;
+    --rule: #D0D5DD;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; overflow: hidden; font-family: 'Montserrat', sans-serif; background: var(--navy-darker); color: var(--text); -webkit-font-smoothing: antialiased; }
+
+  .stage { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; }
+  .slide { position: absolute; width: 92vw; max-width: 1440px; aspect-ratio: 16/9; background: var(--white); box-shadow: 0 40px 100px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05); opacity: 0; pointer-events: none; transform: translateX(60px); transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1); overflow: hidden; border-radius: 4px; }
+  .slide.active { opacity: 1; pointer-events: all; transform: translateX(0); z-index: 10; }
+  .slide.previous { transform: translateX(-60px); }
+
+  .top-accent { position: absolute; top: 0; left: 0; right: 0; height: 8px; background: linear-gradient(90deg, var(--green) 0%, var(--green-bright) 100%); z-index: 5; }
+  .eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; color: var(--blue); text-transform: uppercase; }
+  .title-rule { width: 48px; height: 5px; background: var(--green); }
+  .slide-footer { position: absolute; bottom: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; padding: 1.1rem 4%; font-size: 0.7rem; color: var(--muted); z-index: 4; }
+  .slide-footer::before { content: ''; position: absolute; top: 0; left: 4%; right: 4%; height: 1px; background: var(--navy); }
+
+  /* SLIDE 1 — TITLE (CLEAN NAVY) */
+  .s1-frame { position: relative; width: 100%; height: 100%; background: var(--navy); overflow: hidden; color: var(--white); }
+  .s1-bg { position: absolute; inset: 0; background: linear-gradient(rgba(15,35,64,0.72), rgba(15,35,64,0.72)), url('../assets/images/photos/facility/envision-building-exterior.png'); background-size: cover; background-position: center; }
+  .s1-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, transparent 0%, rgba(15, 35, 64, 0.55) 100%); }
+  .s1-content { position: relative; height: 100%; padding: 8% 6% 6% 6%; display: flex; flex-direction: column; justify-content: center; z-index: 2; }
+  .s1-eyebrow { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.22em; color: var(--blue-light); margin-bottom: 1.4rem; }
+  .s1-rule { width: 60px; height: 6px; background: var(--green); margin-bottom: 1.6rem; }
+  .s1-title { font-size: 4.6rem; font-weight: 800; line-height: 1; letter-spacing: -0.025em; margin-bottom: 1.4rem; max-width: 70%; }
+  .s1-sub { font-size: 1.4rem; font-weight: 300; color: rgba(255,255,255,0.82); font-style: italic; line-height: 1.4; max-width: 60%; }
+  .s1-meta { position: absolute; bottom: 6%; left: 6%; font-size: 0.8rem; color: rgba(255,255,255,0.6); line-height: 1.7; z-index: 2; }
+  .s1-pilot-tag { position: absolute; bottom: 6%; right: 6%; text-align: right; z-index: 2; }
+  .s1-pilot-num { font-size: 6rem; font-weight: 900; color: var(--green); line-height: 0.85; letter-spacing: -0.04em; text-shadow: 0 4px 30px rgba(124, 179, 66, 0.3); }
+  .s1-pilot-label { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.22em; color: var(--white); margin-top: 0.4rem; }
+  .s1-pilot-sub { font-size: 0.72rem; color: rgba(255,255,255,0.6); font-style: italic; margin-top: 0.3rem; }
+  .s1-logo { position: absolute; top: 6%; right: 6%; height: 2.2rem; width: auto; z-index: 2; opacity: 0.88; }
+
+  /* SLIDE 2 — OPPORTUNITY + ENVISION CONTEXT */
+  .s2-frame { position: relative; width: 100%; height: 100%; padding: 4% 4% 5% 4%; background: var(--white); }
+  .s2-header { margin-bottom: 1.4rem; }
+  .s2-eyebrow { margin-bottom: 0.5rem; }
+  .s2-title { font-size: 2.1rem; font-weight: 800; color: var(--navy); line-height: 1.1; margin: 0.3rem 0 0.4rem; }
+  .s2-rule { width: 48px; height: 5px; background: var(--green); }
+  .s2-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 1.6rem; height: calc(100% - 8rem); }
+  .s2-opportunity { display: flex; flex-direction: column; gap: 1.2rem; }
+  .s2-opp-lede { font-size: 1.05rem; line-height: 1.6; color: var(--text); }
+  .s2-opp-lede strong { color: var(--navy); font-weight: 700; }
+  .s2-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .s2-stat { background: var(--light); border-left: 4px solid var(--green); padding: 1rem 1.2rem; }
+  .s2-stat-num { font-size: 1.8rem; font-weight: 900; color: var(--navy); line-height: 1; letter-spacing: -0.02em; margin-bottom: 0.3rem; }
+  .s2-stat-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; color: var(--blue); text-transform: uppercase; margin-bottom: 0.4rem; }
+  .s2-stat-text { font-size: 0.78rem; line-height: 1.45; color: var(--text); }
+  .s2-opp-detail { font-size: 0.92rem; line-height: 1.6; color: var(--text); padding: 1rem 1.2rem; background: var(--light); border-left: 4px solid var(--navy); margin-top: 0.4rem; }
+  .s2-opp-detail strong { color: var(--navy); font-weight: 700; }
+  .s2-envision { background: var(--navy); color: var(--white); padding: 1.8rem 1.6rem; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+  .s2-envision::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: var(--green); }
+  .s2-env-eyebrow { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; color: var(--blue-light); margin-bottom: 0.5rem; }
+  .s2-env-title { font-size: 1.25rem; font-weight: 800; color: var(--white); line-height: 1.15; margin-bottom: 1rem; }
+  .s2-env-list { list-style: none; flex: 1; }
+  .s2-env-item { padding: 0.65rem 0; border-bottom: 1px solid rgba(255,255,255,0.12); font-size: 0.82rem; line-height: 1.45; color: rgba(255,255,255,0.88); display: flex; gap: 0.6rem; align-items: flex-start; }
+  .s2-env-item:last-child { border-bottom: none; }
+  .s2-env-bullet { flex-shrink: 0; width: 14px; height: 14px; border-radius: 50%; background: var(--green); margin-top: 3px; }
+
+  /* SLIDE 3 — DIBBS COMPARISON */
+  .s3-frame { position: relative; width: 100%; height: 100%; padding: 4% 4% 5% 4%; background: var(--white); }
+  .s3-header { margin-bottom: 1.5rem; }
+  .s3-title { font-size: 2.1rem; font-weight: 800; color: var(--navy); line-height: 1.1; margin: 0.4rem 0; }
+  .s3-subtitle { font-size: 0.92rem; color: var(--muted); font-style: italic; margin-top: 0.4rem; }
+  .s3-comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; height: calc(100% - 9rem); }
+  .s3-column { display: flex; flex-direction: column; cursor: pointer; transition: transform 0.3s ease; }
+  .s3-column:hover { transform: translateY(-3px); }
+  .s3-col-header { padding: 0.8rem 1.2rem; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+  .s3-col-current .s3-col-header { background: #FEE4E2; color: #B42318; }
+  .s3-col-controlled .s3-col-header { background: #D1FADF; color: #027A48; }
+  .s3-col-body { flex: 1; background: var(--light); border: 1px solid var(--rule); border-top: none; padding: 1.2rem 1.4rem; }
+  .s3-step { display: flex; align-items: flex-start; gap: 0.9rem; padding: 0.55rem 0; border-bottom: 1px solid var(--light-gray); font-size: 0.85rem; line-height: 1.4; }
+  .s3-step:last-child { border-bottom: none; }
+  .s3-step-num { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; color: var(--white); font-size: 0.7rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+  .s3-col-current .s3-step-num { background: #B42318; }
+  .s3-col-controlled .s3-step-num { background: #027A48; }
+  .s3-step-text { flex: 1; color: var(--text); padding-top: 2px; }
+  .s3-step-time { font-size: 0.7rem; color: var(--muted); font-weight: 600; margin-top: 0.15rem; }
+  .s3-col-footer { color: var(--white); padding: 0.9rem 1.2rem; text-align: center; }
+  .s3-col-current .s3-col-footer { background: #B42318; }
+  .s3-col-controlled .s3-col-footer { background: #027A48; }
+  .s3-col-footer-stat { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.2rem; }
+  .s3-col-footer-label { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.85; }
+
+  /* SLIDE 4 — MODEL DIAGRAM (CLEAN) */
+  .s4-frame { position: relative; width: 100%; height: 100%; background: var(--navy); color: var(--white); padding: 4.5% 5% 5% 5%; overflow: hidden; }
+  .s4-bg { position: absolute; inset: 0; background: linear-gradient(rgba(15,35,64,0.84), rgba(15,35,64,0.84)), url('../assets/images/photos/backgrounds/envision-tech-code-bg.jpg'); background-size: cover; background-position: center; }
+  .s4-content { position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; }
+  .s4-eyebrow { color: var(--blue-light); margin-bottom: 0.8rem; }
+  .s4-title { font-size: 2.4rem; font-weight: 800; color: var(--white); line-height: 1.1; margin-bottom: 0.5rem; }
+  .s4-rule { width: 60px; height: 5px; background: var(--green); margin-bottom: 2rem; }
+  .s4-diagram { display: grid; grid-template-columns: 1fr 60px 1.2fr 60px 1fr; align-items: center; flex: 1; gap: 0; }
+  .s4-box { background: rgba(15, 35, 64, 0.78); backdrop-filter: blur(8px); border: 1px solid rgba(74, 144, 164, 0.4); padding: 1.8rem 1.4rem; text-align: center; height: 100%; display: flex; flex-direction: column; justify-content: center; }
+  .s4-box.center { background: var(--green); border: none; transform: scale(1.08); box-shadow: 0 25px 60px rgba(124, 179, 66, 0.4); z-index: 2; }
+  .s4-box-eyebrow { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.18em; color: var(--green); margin-bottom: 0.7rem; }
+  .s4-box.center .s4-box-eyebrow { color: var(--navy); }
+  .s4-box-title { font-size: 1.3rem; font-weight: 700; color: var(--white); margin-bottom: 1.2rem; }
+  .s4-box.center .s4-box-title { color: var(--navy-deep); }
+  .s4-box-list { list-style: none; font-size: 0.85rem; color: rgba(255,255,255,0.78); line-height: 1.85; }
+  .s4-box.center .s4-box-list { color: var(--navy-deep); font-weight: 600; }
+  .s4-arrow { display: flex; align-items: center; justify-content: center; color: var(--green); font-size: 2rem; font-weight: 300; }
+  .s4-tagline { text-align: center; font-size: 1.05rem; font-style: italic; color: rgba(255,255,255,0.85); margin-top: 1.5rem; }
+
+  /* SLIDE 5 — WHAT PHILIPS GETS */
+  .s5-frame { position: relative; width: 100%; height: 100%; padding: 4% 4% 5% 4%; background: var(--white); }
+  .s5-header { margin-bottom: 1.5rem; }
+  .s5-title { font-size: 2.2rem; font-weight: 800; color: var(--navy); line-height: 1.1; margin: 0.4rem 0; }
+  .s5-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 1.2rem; height: calc(100% - 8rem); }
+  .s5-hero { background: linear-gradient(rgba(15,35,64,0.91), rgba(15,35,64,0.91)), url('../assets/images/photos/people/envision-employee-laptop.jpg'); background-size: cover; background-position: center top; color: var(--white); padding: 2.5rem 2.2rem; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
+  .s5-hero::before { content: ''; position: absolute; top: 0; left: 0; width: 6px; height: 100%; background: var(--green); }
+  .s5-hero-eyebrow { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; color: var(--blue-light); margin-bottom: 0.8rem; }
+  .s5-hero-title { font-size: 2rem; font-weight: 800; line-height: 1.1; margin-bottom: 1rem; }
+  .s5-hero-body { font-size: 0.95rem; line-height: 1.6; color: rgba(255,255,255,0.82); }
+  .s5-hero-quote { margin-top: auto; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.15); font-size: 0.85rem; font-style: italic; color: var(--green-bright); }
+  .s5-stack { display: flex; flex-direction: column; gap: 0.8rem; }
+  .s5-item { background: var(--light); border-left: 4px solid var(--navy); padding: 1rem 1.2rem; transition: all 0.3s ease; flex: 1; }
+  .s5-item:hover { background: var(--white); border-left-color: var(--green); box-shadow: 0 8px 24px rgba(27, 54, 93, 0.1); transform: translateX(4px); }
+  .s5-item-title { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.3rem; }
+  .s5-item-body { font-size: 0.8rem; line-height: 1.5; color: var(--text); }
+
+  /* SLIDE 6 — WHY ENVISION */
+  .s6-frame { position: relative; width: 100%; height: 100%; background: var(--white); overflow: hidden; }
+  .s6-image { position: absolute; top: 0; right: 0; width: 42%; height: 100%; background-image: url('../assets/images/photos/people/envision-employee-headset.jpg'); background-size: cover; background-position: center; }
+  .s6-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, var(--white) 0%, transparent 25%, transparent 100%); }
+  .s6-content { position: relative; z-index: 2; width: 62%; height: 100%; padding: 4.5% 3% 5% 5%; display: flex; flex-direction: column; }
+  .s6-eyebrow { margin-bottom: 0.7rem; }
+  .s6-title { font-size: 2.2rem; font-weight: 800; color: var(--navy); line-height: 1.1; margin-bottom: 0.5rem; }
+  .s6-rule { width: 48px; height: 5px; background: var(--green); margin-bottom: 1.4rem; }
+  .s6-lede { font-size: 1rem; line-height: 1.6; color: var(--text); margin-bottom: 1.6rem; font-weight: 500; }
+  .s6-lede strong { color: var(--navy); font-weight: 700; }
+  .s6-proofs { display: flex; flex-direction: column; gap: 0.65rem; }
+  .s6-proof { display: grid; grid-template-columns: 55px 1fr; gap: 1rem; align-items: center; }
+  .s6-proof-num { font-size: 1.6rem; font-weight: 800; color: var(--green); border-right: 2px solid var(--navy); padding-right: 1rem; text-align: right; line-height: 1; }
+  .s6-proof-text { font-size: 0.83rem; line-height: 1.45; color: var(--text); }
+  .s6-proof-text strong { color: var(--navy); font-weight: 700; display: block; margin-bottom: 0.15rem; }
+
+  /* SLIDE 7 — OPERATING CONDITIONS */
+  .s7-frame { position: relative; width: 100%; height: 100%; padding: 4% 4% 5% 4%; background: var(--white); }
+  .s7-header { margin-bottom: 1.4rem; }
+  .s7-title { font-size: 2.2rem; font-weight: 800; color: var(--navy); line-height: 1.1; margin: 0.4rem 0; }
+  .s7-subtitle { font-size: 0.92rem; color: var(--muted); font-style: italic; margin-top: 0.4rem; }
+  .s7-table { display: grid; grid-template-columns: 1fr 1fr; gap: 0; height: calc(100% - 8rem); border: 1px solid var(--rule); }
+  .s7-col { padding: 1.6rem 1.8rem; display: flex; flex-direction: column; }
+  .s7-col-envision { background: var(--navy); color: var(--white); }
+  .s7-col-philips { background: var(--light); }
+  .s7-col-header { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; margin-bottom: 0.3rem; }
+  .s7-col-envision .s7-col-header { color: var(--green); }
+  .s7-col-philips .s7-col-header { color: var(--blue); }
+  .s7-col-title { font-size: 1.4rem; font-weight: 800; margin-bottom: 1.2rem; line-height: 1.1; }
+  .s7-col-envision .s7-col-title { color: var(--white); }
+  .s7-col-philips .s7-col-title { color: var(--navy); }
+  .s7-col-list { list-style: none; flex: 1; }
+  .s7-col-item { padding: 0.75rem 0; border-bottom: 1px solid; font-size: 0.88rem; line-height: 1.45; display: flex; gap: 0.7rem; align-items: flex-start; }
+  .s7-col-envision .s7-col-item { border-color: rgba(255,255,255,0.12); color: rgba(255,255,255,0.88); }
+  .s7-col-philips .s7-col-item { border-color: var(--rule); color: var(--text); }
+  .s7-col-item:last-child { border-bottom: none; }
+  .s7-col-bullet { flex-shrink: 0; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.65rem; font-weight: 800; margin-top: 1px; }
+  .s7-col-envision .s7-col-bullet { background: var(--green); color: var(--navy); }
+  .s7-col-philips .s7-col-bullet { background: var(--navy); color: var(--white); }
+  .s7-col-item strong { display: block; color: inherit; font-weight: 700; margin-bottom: 0.15rem; }
+  .s7-col-envision .s7-col-item strong { color: var(--white); }
+  .s7-col-philips .s7-col-item strong { color: var(--navy); }
+
+  /* SLIDE 8 — PILOT TIMELINE */
+  .s8-frame { position: relative; width: 100%; height: 100%; padding: 4% 4% 5% 4%; background: var(--white); }
+  .s8-header { margin-bottom: 1.6rem; }
+  .s8-title { font-size: 2.2rem; font-weight: 800; color: var(--navy); line-height: 1.1; margin: 0.4rem 0; }
+  .s8-timeline { position: relative; height: 90px; margin: 1.5rem 6% 2rem; }
+  .s8-track { position: absolute; top: 50%; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--navy) 0%, var(--blue) 50%, var(--green) 100%); transform: translateY(-50%); border-radius: 2px; }
+  .s8-point { position: absolute; top: 50%; transform: translate(-50%, -50%); text-align: center; }
+  .s8-dot { width: 26px; height: 26px; background: var(--white); border: 4px solid var(--green); border-radius: 50%; margin: 0 auto; box-shadow: 0 4px 16px rgba(124, 179, 66, 0.3); }
+  .s8-day { position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); font-size: 0.78rem; font-weight: 800; color: var(--blue); letter-spacing: 0.1em; white-space: nowrap; margin-bottom: 0.5rem; }
+  .s8-stage-name { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-top: 0.6rem; white-space: nowrap; }
+  .s8-details { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 1.5rem; }
+  .s8-detail { background: var(--light); border-top: 5px solid var(--green); padding: 1.4rem 1.4rem 1.6rem; transition: all 0.3s ease; min-height: 180px; display: flex; flex-direction: column; }
+  .s8-detail:hover { background: var(--white); box-shadow: 0 12px 32px rgba(27, 54, 93, 0.12); transform: translateY(-3px); }
+  .s8-detail-eyebrow { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; color: var(--blue); margin-bottom: 0.4rem; text-transform: uppercase; }
+  .s8-detail-title { font-size: 1.15rem; font-weight: 700; color: var(--navy); margin-bottom: 0.6rem; }
+  .s8-detail-body { font-size: 0.88rem; line-height: 1.6; color: var(--text); }
+  .s8-callout { margin-top: 1.5rem; padding: 1rem 1.4rem; background: var(--navy); color: var(--white); display: flex; align-items: center; gap: 1rem; }
+  .s8-callout-icon { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--green); color: var(--navy); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; }
+  .s8-callout-text { font-size: 0.92rem; line-height: 1.5; }
+  .s8-callout-text strong { color: var(--green-bright); font-weight: 700; }
+
+  /* SLIDE 9 — HOLDING SCREEN */
+  .s9-frame { position: relative; width: 100%; height: 100%; background: var(--navy); color: var(--white); overflow: hidden; }
+  .s9-bg { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(15,35,64,0.65) 0%, rgba(15,35,64,0.88) 70%), url('../assets/images/photos/facility/envision-building-exterior.png'); background-size: cover; background-position: center top; }
+  .s9-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, transparent 0%, rgba(15, 35, 64, 0.3) 100%); }
+  .s9-content { position: relative; z-index: 2; height: 100%; padding: 6% 6%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+  .s9-eyebrow { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.22em; color: var(--blue-light); margin-bottom: 1rem; }
+  .s9-rule { width: 60px; height: 5px; background: var(--green); margin: 0 auto 1.6rem; }
+  .s9-tagline { font-size: 2.6rem; font-weight: 800; color: var(--white); line-height: 1.15; letter-spacing: -0.02em; max-width: 80%; margin-bottom: 3rem; }
+  .s9-tagline span { color: var(--green); }
+  .s9-mini-diagram { display: grid; grid-template-columns: 1fr 40px 1.2fr 40px 1fr; align-items: center; gap: 0; max-width: 80%; width: 100%; }
+  .s9-mini-box { background: rgba(15, 35, 64, 0.6); border: 1px solid rgba(74, 144, 164, 0.35); padding: 1rem 0.8rem; text-align: center; }
+  .s9-mini-box.center { background: var(--green); border: none; transform: scale(1.06); box-shadow: 0 15px 40px rgba(124, 179, 66, 0.3); }
+  .s9-mini-eyebrow { font-size: 0.62rem; font-weight: 800; letter-spacing: 0.16em; color: var(--green); margin-bottom: 0.3rem; }
+  .s9-mini-box.center .s9-mini-eyebrow { color: var(--navy); }
+  .s9-mini-title { font-size: 0.82rem; font-weight: 700; color: var(--white); }
+  .s9-mini-box.center .s9-mini-title { color: var(--navy-deep); }
+  .s9-mini-arrow { display: flex; align-items: center; justify-content: center; color: var(--green); font-size: 1.4rem; }
+  .s9-footer { position: absolute; bottom: 4%; left: 0; right: 0; text-align: center; font-size: 0.72rem; color: rgba(255,255,255,0.4); font-style: italic; z-index: 2; }
+  .s9-logo { height: 2rem; width: auto; margin-bottom: 1.4rem; opacity: 0.88; }
+
+  /* NAV CONTROLS */
+  .nav-controls { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 1.2rem; background: rgba(15, 35, 64, 0.85); backdrop-filter: blur(12px); padding: 0.7rem 1.4rem; border-radius: 100px; border: 1px solid rgba(124, 179, 66, 0.25); z-index: 100; box-shadow: 0 10px 40px rgba(0,0,0,0.4); }
+  .nav-btn { background: transparent; border: 1px solid rgba(255,255,255,0.2); color: var(--white); width: 36px; height: 36px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1rem; transition: all 0.25s ease; }
+  .nav-btn:hover { background: var(--green); border-color: var(--green); color: var(--navy); }
+  .nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+  .nav-btn:disabled:hover { background: transparent; color: var(--white); }
+  .slide-counter { font-size: 0.85rem; font-weight: 600; color: var(--white); letter-spacing: 0.05em; min-width: 44px; text-align: center; }
+  .slide-counter .current { color: var(--green); font-size: 1.05rem; }
+  .slide-counter .divider { color: rgba(255,255,255,0.3); margin: 0 0.3rem; }
+
+  /* ANIMATIONS */
+  @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes scaleIn { from { opacity: 0; transform: scale(0.92); } to { opacity: 1; transform: scale(1); } }
+  @keyframes slideInRight { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
+
+  .slide.active .s1-eyebrow, .slide.active .s2-eyebrow, .slide.active .s4-eyebrow, .slide.active .s6-eyebrow, .slide.active .s9-eyebrow, .slide.active .eyebrow { animation: fadeInUp 0.6s ease 0.2s both; }
+  .slide.active .s1-rule, .slide.active .s2-rule, .slide.active .s4-rule, .slide.active .s6-rule, .slide.active .s9-rule, .slide.active .title-rule { animation: fadeInUp 0.5s ease 0.45s both; }
+  .slide.active .s1-title, .slide.active .s2-headline, .slide.active .s3-title, .slide.active .s4-title, .slide.active .s5-title, .slide.active .s6-title, .slide.active .s7-title, .slide.active .s8-title, .slide.active .s9-headline { animation: fadeInUp 0.7s ease 0.35s both; }
+  .slide.active .s1-sub, .slide.active .s2-body, .slide.active .s3-subtitle, .slide.active .s6-lede, .slide.active .s7-subtitle, .slide.active .s9-sub { animation: fadeInUp 0.7s ease 0.55s both; }
+  .slide.active .s1-pilot-num { animation: scaleIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.7s both; }
+  .slide.active .s2-opp-lede { animation: fadeInUp 0.7s ease 0.55s both; }
+  .slide.active .s2-stat { animation: fadeInUp 0.6s ease both; }
+  .slide.active .s2-stat:nth-child(1) { animation-delay: 0.75s; }
+  .slide.active .s2-stat:nth-child(2) { animation-delay: 0.9s; }
+  .slide.active .s2-envision { animation: fadeInUp 0.7s ease 0.6s both; }
+  .slide.active .s3-column { animation: fadeInUp 0.7s ease both; }
+  .slide.active .s3-col-current { animation-delay: 0.5s; }
+  .slide.active .s3-col-controlled { animation-delay: 0.7s; }
+  .slide.active .s4-box, .slide.active .s4-arrow { animation: fadeInUp 0.7s ease both; }
+  .slide.active .s4-box:nth-child(1) { animation-delay: 0.55s; }
+  .slide.active .s4-arrow:nth-child(2) { animation-delay: 0.85s; }
+  .slide.active .s4-box.center { animation-delay: 0.7s; }
+  .slide.active .s4-arrow:nth-child(4) { animation-delay: 1.0s; }
+  .slide.active .s4-box:nth-child(5) { animation-delay: 0.85s; }
+  .slide.active .s4-tagline { animation: fadeInUp 0.6s ease 1.2s both; }
+  .slide.active .s5-hero { animation: fadeInUp 0.7s ease 0.5s both; }
+  .slide.active .s5-item { animation: slideInRight 0.6s ease both; }
+  .slide.active .s5-item:nth-child(1) { animation-delay: 0.65s; }
+  .slide.active .s5-item:nth-child(2) { animation-delay: 0.8s; }
+  .slide.active .s5-item:nth-child(3) { animation-delay: 0.95s; }
+  .slide.active .s6-image { animation: fadeIn 1s ease 0.4s both; }
+  .slide.active .s6-proof { animation: fadeInUp 0.6s ease both; }
+  .slide.active .s6-proof:nth-child(1) { animation-delay: 0.7s; }
+  .slide.active .s6-proof:nth-child(2) { animation-delay: 0.85s; }
+  .slide.active .s6-proof:nth-child(3) { animation-delay: 1.0s; }
+  .slide.active .s6-proof:nth-child(4) { animation-delay: 1.15s; }
+  .slide.active .s6-proof:nth-child(5) { animation-delay: 1.3s; }
+  .slide.active .s7-col { animation: fadeInUp 0.7s ease both; }
+  .slide.active .s7-col-envision { animation-delay: 0.5s; }
+  .slide.active .s7-col-philips { animation-delay: 0.65s; }
+  .slide.active .s8-timeline { animation: fadeIn 0.8s ease 0.5s both; }
+  .slide.active .s8-detail { animation: fadeInUp 0.6s ease both; }
+  .slide.active .s8-detail:nth-child(1) { animation-delay: 0.8s; }
+  .slide.active .s8-detail:nth-child(2) { animation-delay: 0.95s; }
+  .slide.active .s8-detail:nth-child(3) { animation-delay: 1.1s; }
+  .slide.active .s9-tagline { animation: fadeInUp 0.8s ease 0.4s both; }
+  .slide.active .s9-mini-box, .slide.active .s9-mini-arrow { animation: fadeInUp 0.7s ease both; }
+  .slide.active .s9-mini-box:nth-child(1) { animation-delay: 0.7s; }
+  .slide.active .s9-mini-arrow:nth-child(2) { animation-delay: 0.85s; }
+  .slide.active .s9-mini-box.center { animation-delay: 0.8s; }
+  .slide.active .s9-mini-arrow:nth-child(4) { animation-delay: 1.0s; }
+  .slide.active .s9-mini-box:nth-child(5) { animation-delay: 0.95s; }
