@@ -29,7 +29,7 @@
 
   /* SLIDE 1 — TITLE (CLEAN NAVY) */
   .s1-frame { position: relative; width: 100%; height: 100%; background: var(--navy); overflow: hidden; color: var(--white); }
-  .s1-bg { position: absolute; inset: 0; background: linear-gradient(rgba(15,35,64,0.72), rgba(15,35,64,0.72)), url('../assets/images/photos/facility/envision-building-exterior.png'); background-size: cover; background-position: center; }
+  .s1-bg { position: absolute; inset: 0; background: linear-gradient(rgba(15,35,64,0.88), rgba(15,35,64,0.88)), url('../assets/images/photos/facility/envision-building-exterior.png'); background-size: cover; background-position: center; }
   .s1-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, transparent 0%, rgba(15, 35, 64, 0.55) 100%); }
   .s1-content { position: relative; height: 100%; padding: 8% 6% 6% 6%; display: flex; flex-direction: column; justify-content: center; z-index: 2; }
   .s1-eyebrow { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.22em; color: var(--blue-light); margin-bottom: 1.4rem; }
@@ -41,7 +41,7 @@
   .s1-pilot-num { font-size: 6rem; font-weight: 900; color: var(--green); line-height: 0.85; letter-spacing: -0.04em; text-shadow: 0 4px 30px rgba(124, 179, 66, 0.3); }
   .s1-pilot-label { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.22em; color: var(--white); margin-top: 0.4rem; }
   .s1-pilot-sub { font-size: 0.72rem; color: rgba(255,255,255,0.6); font-style: italic; margin-top: 0.3rem; }
-  .s1-logo { position: absolute; top: 6%; right: 6%; height: 2.2rem; width: auto; z-index: 2; opacity: 0.88; }
+  .s1-logo { position: absolute; top: 5%; left: 6%; width: 130px; height: auto; z-index: 2; opacity: 0.88; }
 
   /* SLIDE 2 — OPPORTUNITY + ENVISION CONTEXT */
   .s2-frame { position: relative; width: 100%; height: 100%; padding: 4% 4% 5% 4%; background: var(--white); }
@@ -196,7 +196,7 @@
 
   /* SLIDE 9 — HOLDING SCREEN */
   .s9-frame { position: relative; width: 100%; height: 100%; background: var(--navy); color: var(--white); overflow: hidden; }
-  .s9-bg { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(15,35,64,0.65) 0%, rgba(15,35,64,0.88) 70%), url('../assets/images/photos/facility/envision-building-exterior.png'); background-size: cover; background-position: center top; }
+  .s9-bg { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(15,35,64,0.84) 0%, rgba(15,35,64,0.94) 70%), url('../assets/images/photos/facility/envision-building-exterior.png'); background-size: cover; background-position: center top; }
   .s9-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, transparent 0%, rgba(15, 35, 64, 0.3) 100%); }
   .s9-content { position: relative; z-index: 2; height: 100%; padding: 6% 6%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
   .s9-eyebrow { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.22em; color: var(--blue-light); margin-bottom: 1rem; }
@@ -212,7 +212,7 @@
   .s9-mini-box.center .s9-mini-title { color: var(--navy-deep); }
   .s9-mini-arrow { display: flex; align-items: center; justify-content: center; color: var(--green); font-size: 1.4rem; }
   .s9-footer { position: absolute; bottom: 4%; left: 0; right: 0; text-align: center; font-size: 0.72rem; color: rgba(255,255,255,0.4); font-style: italic; z-index: 2; }
-  .s9-logo { height: 2rem; width: auto; margin-bottom: 1.4rem; opacity: 0.88; }
+  .s9-logo { width: 140px; height: auto; margin-bottom: 1.4rem; opacity: 0.88; display: block; margin-left: auto; margin-right: auto; }
 
   /* NAV CONTROLS */
   .nav-controls { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 1.2rem; background: rgba(15, 35, 64, 0.85); backdrop-filter: blur(12px); padding: 0.7rem 1.4rem; border-radius: 100px; border: 1px solid rgba(124, 179, 66, 0.25); z-index: 100; box-shadow: 0 10px 40px rgba(0,0,0,0.4); }
