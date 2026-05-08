@@ -51,7 +51,7 @@
   .slide.active { opacity: 1; pointer-events: all; transform: translateX(0); z-index: 10; }
   .slide.previous { transform: translateX(-60px); }
 
-  .top-accent { position: absolute; top: 0; left: 0; right: 0; height: 8px; background: linear-gradient(90deg, var(--green) 0%, var(--bright-blue) 100%); z-index: 5; }
+  .top-accent { position: absolute; top: 0; left: 0; right: 0; height: 8px; background: var(--green); z-index: 5; }
   .eyebrow { font-size: var(--eyebrow-size); font-weight: 700; letter-spacing: var(--eyebrow-track); color: var(--blue); text-transform: uppercase; }
   .title-rule { width: var(--rule-w); height: var(--rule-h); background: var(--green); }
   .slide-footer { position: absolute; bottom: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; padding: 1.1rem var(--pad-x); font-size: 0.7rem; color: var(--muted); z-index: 4; }
@@ -214,7 +214,7 @@
   .s8-title { font-size: 2.2rem; font-weight: 800; color: var(--navy); line-height: 1.1; margin: 0.4rem 0; }
   /* Even-rhythm timeline: 4 stages spaced via grid columns; track centered behind dots */
   .s8-timeline { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); align-items: center; height: 90px; margin: 1.8rem 4% 2.4rem; }
-  .s8-track { position: absolute; top: 50%; left: 12.5%; right: 12.5%; height: 4px; background: linear-gradient(90deg, var(--navy) 0%, var(--blue) 35%, var(--bright-blue) 70%, var(--green) 100%); transform: translateY(-50%); border-radius: 2px; z-index: 0; }
+  .s8-track { position: absolute; top: 50%; left: 12.5%; right: 12.5%; height: 4px; background: linear-gradient(90deg, var(--navy) 0%, var(--green) 100%); transform: translateY(-50%); border-radius: 2px; z-index: 0; }
   .s8-point { position: relative; text-align: center; z-index: 1; }
   .s8-dot { width: 26px; height: 26px; background: var(--white); border: 4px solid var(--green); border-radius: 50%; margin: 0 auto; box-shadow: 0 4px 16px rgba(120, 190, 33, 0.3); position: relative; z-index: 2; }
   .s8-day { font-size: 0.78rem; font-weight: 800; color: var(--blue); letter-spacing: 0.1em; white-space: nowrap; margin-bottom: 0.7rem; display: block; }
