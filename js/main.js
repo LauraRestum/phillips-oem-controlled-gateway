@@ -78,7 +78,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 document.getElementById('stage').addEventListener('click', (e) => {
-  if (e.target.closest('.nav-controls')) return;
+  if (e.target.closest('.nav-controls') || e.target.closest('.progress-pill')) return;
   nextSlide();
 });
 

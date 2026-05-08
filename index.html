@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=5">
+  <link rel="stylesheet" href="css/styles.css?v=6">
 </head>
 <body>
 
@@ -359,17 +359,20 @@
 
 </div>
 
-<div class="nav-controls">
-  <button class="nav-btn" id="prevBtn" onclick="prevSlide()" aria-label="Previous slide">&lsaquo;</button>
+<div class="progress-pill">
   <div class="progress-bar" id="progressBar" role="tablist" aria-label="Slide navigation">
     <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
   </div>
+</div>
+
+<div class="nav-controls">
+  <button class="nav-btn" id="prevBtn" onclick="prevSlide()" aria-label="Previous slide">&lsaquo;</button>
   <div class="slide-counter">
     <span class="current" id="currentSlide">1</span><span class="divider">/</span><span id="totalSlides">9</span>
   </div>
   <button class="nav-btn" id="nextBtn" onclick="nextSlide()" aria-label="Next slide">&rsaquo;</button>
 </div>
 
-<script src="js/main.js?v=3"></script>
+<script src="js/main.js?v=4"></script>
 </body>
 </html>
