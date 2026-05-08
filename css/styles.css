@@ -256,6 +256,14 @@
   .slide-counter { font-size: 0.85rem; font-weight: 600; color: var(--white); letter-spacing: 0.05em; min-width: 44px; text-align: center; }
   .slide-counter .current { color: var(--green); font-size: 1.05rem; }
   .slide-counter .divider { color: rgba(255,255,255,0.3); margin: 0 0.3rem; }
+  .progress-bar { position: relative; display: flex; align-items: center; justify-content: space-between; width: 230px; height: 32px; padding: 0 6px; }
+  .progress-track { position: absolute; left: 12px; right: 12px; top: 50%; height: 2px; margin-top: -1px; background: rgba(255,255,255,0.18); border-radius: 2px; overflow: visible; }
+  .progress-fill { width: 0; height: 100%; background: var(--green); border-radius: 2px; transition: width 0.45s ease; }
+  .progress-dot { position: relative; z-index: 2; width: 10px; height: 10px; border-radius: 50%; border: none; background: rgba(255,255,255,0.3); cursor: pointer; padding: 0; transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease; }
+  .progress-dot:hover { transform: scale(1.4); background: var(--white); }
+  .progress-dot.completed { background: var(--green); }
+  .progress-dot.current { background: var(--blue-light); transform: scale(1.6); box-shadow: 0 0 0 4px rgba(65, 182, 230, 0.28); }
+  .progress-dot:focus-visible { outline: 2px solid var(--blue-light); outline-offset: 3px; }
 
   /* ANIMATIONS */
   @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
