@@ -3,6 +3,32 @@ const slides = document.querySelectorAll('.slide');
 const totalSlides = slides.length;
 document.getElementById('totalSlides').textContent = totalSlides;
 
+function buildProgressBar() {
+  const bar = document.getElementById('progressBar');
+  for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'progress-dot';
+    dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+    dot.dataset.index = i;
+    dot.addEventListener('click', (e) => {
+      e.stopPropagation();
+      goToSlide(i);
+    });
+    bar.appendChild(dot);
+  }
+}
+
+function updateProgress(index) {
+  const fill = document.getElementById('progressFill');
+  fill.style.width = totalSlides > 1 ? (index / (totalSlides - 1)) * 100 + '%' : '100%';
+  document.querySelectorAll('.progress-dot').forEach((dot, i) => {
+    dot.classList.remove('completed', 'current');
+    if (i < index) dot.classList.add('completed');
+    else if (i === index) dot.classList.add('current');
+  });
+}
+
 function showSlide(index) {
   slides.forEach((slide, i) => {
     slide.classList.remove('active', 'previous');
@@ -12,6 +38,13 @@ function showSlide(index) {
   document.getElementById('currentSlide').textContent = index + 1;
   document.getElementById('prevBtn').disabled = index === 0;
   document.getElementById('nextBtn').disabled = index === totalSlides - 1;
+  updateProgress(index);
+}
+
+function goToSlide(index) {
+  if (index < 0 || index >= totalSlides) return;
+  currentIndex = index;
+  showSlide(index);
 }
 
 function nextSlide() {
@@ -37,12 +70,10 @@ document.addEventListener('keydown', (e) => {
     prevSlide();
   } else if (e.key === 'Home') {
     e.preventDefault();
-    currentIndex = 0;
-    showSlide(0);
+    goToSlide(0);
   } else if (e.key === 'End') {
     e.preventDefault();
-    currentIndex = totalSlides - 1;
-    showSlide(currentIndex);
+    goToSlide(totalSlides - 1);
   }
 });
 
@@ -64,4 +95,5 @@ document.addEventListener('touchend', (e) => {
   }
 });
 
+buildProgressBar();
 showSlide(0);
