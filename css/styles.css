@@ -149,12 +149,12 @@
   .s5-title { font-size: 2.2rem; font-weight: 800; color: var(--navy); line-height: 1.1; margin: 0.4rem 0; }
   .s5-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 1.2rem; height: calc(100% - 8rem); align-items: stretch; }
   .s5-hero { background:
-      linear-gradient(180deg, rgba(0,26,61,0.95) 0%, rgba(0,26,61,0.86) 38%, rgba(0,26,61,0.35) 62%, rgba(0,26,61,0) 100%),
+      linear-gradient(0deg, rgba(0,26,61,0.96) 0%, rgba(0,26,61,0.9) 32%, rgba(0,26,61,0.55) 55%, rgba(0,26,61,0.15) 78%, rgba(0,26,61,0) 100%),
       url('../assets/images/photos/people/envision-employee-laptop.jpg');
       background-size: cover, cover;
-      background-position: center, center 30%;
+      background-position: center, center 25%;
       background-repeat: no-repeat, no-repeat;
-      color: var(--white); padding: 2.5rem 2.2rem; display: flex; flex-direction: column; justify-content: flex-start; position: relative; overflow: hidden; }
+      color: var(--white); padding: 2.5rem 2.2rem; display: flex; flex-direction: column; justify-content: flex-end; position: relative; overflow: hidden; }
   .s5-hero::before { content: ''; position: absolute; top: 0; left: 0; width: 6px; height: 100%; background: var(--green); z-index: 1; }
   .s5-hero-eyebrow { font-size: var(--eyebrow-size); font-weight: 700; letter-spacing: var(--eyebrow-track); color: var(--blue-light); margin-bottom: 0.8rem; }
   .s5-hero-title { font-size: 2rem; font-weight: 800; line-height: 1.1; margin-bottom: 1rem; max-width: 90%; }
